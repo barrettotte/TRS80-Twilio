@@ -1,0 +1,2 @@
+; TEST WRITING TO RS232
+;
