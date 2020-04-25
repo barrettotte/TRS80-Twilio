@@ -1,12 +1,15 @@
 # TRS80-4P
 
-The original goal of this project was to receive data from TRS-80 4P's RS232 interface and send a text message after data was received.
+The original goal of this project was to receive data from my TRS-80 4P's RS232 interface and send a text message after data was received.
 
 It involved either writing Z80 assembly or embedding machine code into BASIC.
-As soon as I started actually making some ground, I woke up horrified.
+As soon as I started actually making some ground one night I went to sleep.
+The next morning I woke up horrified when I tried to boot up the model 4P.
 
-My model 4P either had faulty RAM or my preboot floppy corrupted.
-Either way, this project approach was killed just like that.
+![sad](sad.jpg)
+
+It either had faulty RAM or my preboot floppy corrupted.
+Either way, this project idea was killed just like that; I didn't have any time left to try repairing.
 
 
 ## References
