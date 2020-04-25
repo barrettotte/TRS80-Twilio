@@ -13,7 +13,9 @@ There were two basic ways to communicate via RS232:
 As soon as I started actually making some ground one night I went to sleep.
 The next morning I woke up horrified when I tried to boot up the model 4P.
 
-![TRS80-4P/sad.jpg](TRS80-4P/sad.jpg)
+<p align="center">
+  <img src="TRS80-4P/sad.jpg" alt="sad" width="75%" height="75%"/>
+</p>
 
 Somehow it either had faulty RAM segment or my preboot floppy corrupted.
 Either way, this project idea was killed just like that; I didn't have any time left to try repairing.
