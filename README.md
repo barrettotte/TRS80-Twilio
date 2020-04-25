@@ -28,7 +28,7 @@ Either way, this project idea was killed just like that; I didn't have any time 
 Despite sinking a depressing amount of time into learning TRS-80 Model 4P, NewDOS, and DISK BASIC quirks 
 I was forced to brainstorm something else for the 5 days remaining in the hackathon.
 
-Luckily, last week I bought a TRS-80 Model 100 off eBay for $50.
+Luckily, last week I bought a [TRS-80 Model 100](http://www.trs-80.com/wordpress/trs-80-computer-line/model-100/) off eBay for $50.
 Its not nearly as cool looking as the TRS-80 Model 4P, but it is what it is.
 
 
@@ -49,3 +49,5 @@ Linux Additional Steps:
 
 ## References
 * [Introduction to PlatformIO](https://www.youtube.com/watch?v=0poh_2rBq7E)
+* [TRS-80 Model 100 Manuals](http://www.classiccmp.org/dunfield/kyocera/index.htm)
+* [Ira Goldklang's TRS-80 Revived Site](http://www.trs-80.com/wordpress/)
