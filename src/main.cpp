@@ -9,7 +9,10 @@ void setup() {
   initWifi();
 
   client.setInsecure();
-  
+
+
+  // TODO: move to loop
+  syncPrintfClr("Listening...");
 }
 
 void loop() {
@@ -18,7 +21,7 @@ void loop() {
 
 // set baud rate and init serial buffer
 void initSerial(){
-  Serial.begin(115200);
+  Serial.begin(BAUD_RATE);
   Serial.println();
   Serial.println();
   Serial.println();

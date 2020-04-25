@@ -26,6 +26,7 @@
 #define SCREEN_WIDTH  128
 #define SCREEN_HEIGHT 64
 
+#define BAUD_RATE      300
 #define SYNCPRINT_SIZE 256
 #define REQBUFF_SIZE   256
 #define RESPBUFF_SIZE  2048
