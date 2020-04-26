@@ -7,7 +7,6 @@
 
 ### Other
 node_modules/
-docs/*pdf
 
 include/trs80_twilio_config.h
 test/http/private.http
