@@ -3,20 +3,53 @@
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 WiFiClientSecure client;
 
+const byte numChars = 32;
+char receivedChars[numChars];
+boolean newData = false;
+
 void setup() {
   initSerial();
   initDisplay();
-  initWifi();
+  //initWifi();
 
-  client.setInsecure();
-
+  //client.setInsecure();
 
   // TODO: move to loop
-  syncPrintfClr("Listening...");
+  //syncPrintfClr("Listening...");
+}
+
+void recieveMessage(){
+  static byte ndx = 0;
+  char end = '\n';
+  char c;
+
+  while(Serial.available() > 0 && !newData){
+    c = Serial.read();
+    if(c != end){
+      receivedChars[ndx] = c;
+      ndx++;
+      if(ndx >= numChars){
+        ndx = numChars - 1;
+      }
+    } else{
+      receivedChars[ndx] = '\0';
+      ndx = 0;
+      newData = true;
+    }
+  }
+}
+
+void showNewData(){
+  if(newData){
+    syncPrintfClr("received\n\n%s", receivedChars);
+    newData = false;
+  }
 }
 
 void loop() {
-  //
+  recieveMessage();
+  showNewData();
+  delay(1000);
 }
 
 // set baud rate and init serial buffer
@@ -55,7 +88,7 @@ void initWifi(){
   syncPrintf("Connecting..");
   while(WiFi.status() != WL_CONNECTED){
     delay(500);
-    syncPrintf(".");
+    syncPrint(".");
   }
   syncPrintfClr("SSID: %s\nIP: %s\n", _WIFI_SSID, WiFi.localIP().toString().c_str());
 }

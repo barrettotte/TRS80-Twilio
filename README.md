@@ -3,6 +3,8 @@
 Calling the Twilio SMS API from a TRS-80 Model 100.
 
 
+
+
 ## Project Idea 1
 The original goal of this project was to receive data from my TRS-80 Model 4P's RS232 interface and send a text message with the Twilio SMS API from an ESP8266.
 
@@ -32,7 +34,6 @@ Luckily, last week I bought a [TRS-80 Model 100](http://www.trs-80.com/wordpress
 Its not nearly as cool looking as the TRS-80 Model 4P, but it is what it is.
 
 
-
 ## Embedded Development in VS Code
 I decided I would take this opportunity to learn about a new tool, [PlatformIO](https://platformio.org/).
 
@@ -51,3 +52,4 @@ Linux Additional Steps:
 * [Introduction to PlatformIO](https://www.youtube.com/watch?v=0poh_2rBq7E)
 * [TRS-80 Model 100 Manuals](http://www.classiccmp.org/dunfield/kyocera/index.htm)
 * [Ira Goldklang's TRS-80 Revived Site](http://www.trs-80.com/wordpress/)
+* [minicom manpages](https://manpages.ubuntu.com/manpages/trusty/man1/minicom.1.html)
