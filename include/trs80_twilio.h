@@ -38,9 +38,9 @@
 #define REQBUFF_SIZE   256
 #define RESPBUFF_SIZE  2048
 
-#define TRS_PHONE      15
-#define TRS_MSG        128
-#define TRSBUFF_SIZE   144 // 15(phone)+1(';')+128(msg)
+#define TRSPHONE_SIZE   15
+#define TRSMSG_SIZE    128
+#define TRSBUFF_SIZE   256
 
 const char *_TWILIO_HOST = "https://api.twilio.com";
 

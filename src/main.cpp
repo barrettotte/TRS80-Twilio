@@ -3,33 +3,23 @@
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 WiFiClientSecure client;
 SoftwareSerial trsSerial;
-
 char trsBuffer[TRSBUFF_SIZE];
-boolean hasMsg = false;
 
 void setup() {
   initSerial();
   initDisplay();
-  //initWifi();
+  initWifi();
+  yield();
 
-  // TODO: move to loop
   syncPrintfClr("Listening...\n");
-
-
 }
 
-
 void loop(){
-  char c;
-
-  if(Serial.available()){
-    Serial.print("Received buffer\n");
-
-    while(Serial.available() > 0){
-      c = Serial.read();
-      Serial.print(c);
+  if(WiFi.status() == WL_CONNECTED){
+    while(trsSerial.available() > 0){
+      Serial.write(trsSerial.read());
+      yield();
     }
-    Serial.println();
   }
 
   // if(WiFi.status() == WL_CONNECTED){
@@ -77,13 +67,14 @@ void loop(){
     // http.end();
     //
   // }
-  delay(2500);
+  //delay(1000);
 }
 
 
 // set baud rate and init both serials
 void initSerial(){
   Serial.begin(BAUD_RATE, SERIAL_8N1);
+  trsSerial.begin(BAUD_RATE, SWSERIAL_8N1, D5, D6, false, 95, 11);
   
   /* Give some init time + switch to serial monitor */
   Serial.println();
@@ -92,10 +83,9 @@ void initSerial(){
   for(uint8_t t = 3; t > 0; t--){
     Serial.printf("WAIT %d...\n", t);
     Serial.flush();
+    trsSerial.flush();
     delay(500);
   }
-  trsSerial.begin(BAUD_RATE, SWSERIAL_8N1, D5, D6, false, TRSBUFF_SIZE, 32);
-  delay(1000);
   Serial.println("\n* * * START * * *");
 }
 
@@ -106,7 +96,7 @@ void initDisplay(){
     Serial.println(F("SSD1306 allocation failed"));
     for(;;);
   }
-  delay(1500);
+  delay(1000);
   clearDisplay();
   display.setTextSize(1);
   display.setTextColor(WHITE);
@@ -123,17 +113,8 @@ void initWifi(){
     syncPrint(".");
   }
   syncPrintfClr("SSID: %s\nIP: %s\n", _WIFI_SSID, WiFi.localIP().toString().c_str());
-}
-
-
-// fetch TRS-80 buffer from software serial
-void getTrsBuffer(){
-  if(trsSerial.available()){
-    Serial.print("Recieved buffer\n");
-    strcpy(trsBuffer, trsSerial.readString().c_str());
-    delay(1000);
-    syncPrintf("%s\n", trsBuffer);
-  }
+  client.flush();
+  delay(500);
 }
 
 
