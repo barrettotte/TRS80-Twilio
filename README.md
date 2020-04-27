@@ -53,3 +53,4 @@ Linux Additional Steps:
 * [TRS-80 Model 100 Manuals](http://www.classiccmp.org/dunfield/kyocera/index.htm)
 * [Ira Goldklang's TRS-80 Revived Site](http://www.trs-80.com/wordpress/)
 * [minicom manpages](https://manpages.ubuntu.com/manpages/trusty/man1/minicom.1.html)
+* [ESP9266 Twilio](https://www.twilio.com/docs/sms/tutorials/how-to-send-sms-messages-esp8266-cpp)

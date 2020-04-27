@@ -3,9 +3,6 @@
 
 #include <Arduino.h>
 
-/* JSON support */
-#include <ArduinoJson.h>
-
 /* OLED support */
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
@@ -19,8 +16,11 @@
 /* For TRS-80 serial interface */
 #include <SoftwareSerial.h>
 
-/* std includes */
-#include <stdarg.h> // variable length args
+/* Base64 encoding authorization header */
+#include <base64.h>
+
+/* variable length arguments */
+#include <stdarg.h>
 
 /* Configuration and secrets */
 #include "trs80_twilio_config.h"
@@ -33,25 +33,26 @@
 #define D5 (14) // TRS-80 TX
 #define D6 (12) // TRS-80 RX
 
-#define BAUD_RATE      300
+#define BAUD_RATE      9600
+#define TRSBAUDRATE    300
+#define TRSBUFF_SIZE   145 // 16+1+128
 #define SYNCPRINT_SIZE 256
-#define REQBUFF_SIZE   256
-#define RESPBUFF_SIZE  2048
 
-#define TRSPHONE_SIZE   15
-#define TRSMSG_SIZE    128
-#define TRSBUFF_SIZE   256
 
-const char *_TWILIO_HOST = "https://api.twilio.com";
+/* SHA-1 fingerprint as of 04-27-2020 (retrieved from browser) */
+const char *_TWILIO_FINGERPRINT = "BC B0 1A 32 80 5D E6 E4 A2 29 66 2B 08 C8 E0 4C 45 29 3F D0";
+const size_t _TWILIO_PORT = 443;
+const char *_TWILIO_HOST = "api.twilio.com";
 
-/* main */
+
+/* init */
 void initSerial();
 void initWifi();
 void initDisplay();
 
-
-void getTrsBuffer();
-
+/* main */
+int sendSms(String phoneTo, String message);
+void reset();
 
 /* display utils */
 void clearDisplay();
@@ -59,6 +60,9 @@ void syncPrint(const char *s);
 void syncPrintf(const char *fmt, ...);
 void syncPrintfClr(const char *fmt, ...);
 
+/* request utils */
 String urlEncode(String s);
+String getAuthHeader(const String& acc, const String& auth);
+
 
 #endif
