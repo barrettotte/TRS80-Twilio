@@ -10,13 +10,13 @@ The original goal of this project was to receive data from my TRS-80 Model 4P's 
 
 There were two basic ways to communicate via RS232:
 1. Write everything in Z80 assembly, assemble it, load into memory, and invoke.
-2. Embed Z80 assembly as machine language into BASIC and invoke with ```USR0``` (see [TRS80-4P/Z80.BAS](TRS80-4P/Z80.BAS)).
+2. Embed Z80 assembly as machine language into BASIC and invoke with ```USR0``` (see [Z80.BAS](docs/TRS80-4P/Z80.BAS)).
 
 As soon as I started actually making some ground one night I went to sleep.
 The next morning I woke up horrified when I tried to boot up the model 4P.
 
 <p align="center">
-  <img src="TRS80-4P/sad.jpg" alt="sad" width="75%" height="75%"/>
+  <img src="docs/TRS80-4P/sad.jpg" alt="sad" width="75%" height="75%"/>
 </p>
 
 Somehow it either had faulty RAM segment or my preboot floppy corrupted.

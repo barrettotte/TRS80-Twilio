@@ -16,6 +16,9 @@
 #include <ESP8266WiFi.h>
 #include <WiFiClientSecure.h>  // create TLS connection
 
+/* For TRS-80 serial interface */
+#include <SoftwareSerial.h>
+
 /* std includes */
 #include <stdarg.h> // variable length args
 
@@ -26,11 +29,20 @@
 #define SCREEN_WIDTH  128
 #define SCREEN_HEIGHT 64
 
+/* Pins */
+#define D5 (14) // TRS-80 TX
+#define D6 (12) // TRS-80 RX
+
 #define BAUD_RATE      300
 #define SYNCPRINT_SIZE 256
 #define REQBUFF_SIZE   256
 #define RESPBUFF_SIZE  2048
 
+#define TRS_PHONE      15
+#define TRS_MSG        128
+#define TRSBUFF_SIZE   144 // 15(phone)+1(';')+128(msg)
+
+const char *_TWILIO_HOST = "https://api.twilio.com";
 
 /* main */
 void initSerial();
@@ -38,10 +50,15 @@ void initWifi();
 void initDisplay();
 
 
+void getTrsBuffer();
+
+
 /* display utils */
 void clearDisplay();
 void syncPrint(const char *s);
 void syncPrintf(const char *fmt, ...);
 void syncPrintfClr(const char *fmt, ...);
+
+String urlEncode(String s);
 
 #endif
