@@ -1,5 +1,21 @@
-# Testing Twilio SMS API
+# Messing around with Twilio API
+@base=https://api.twilio.com
+
+# Twilio needs url encoded strings -> https://www.urlencoder.org/
+
+### Basic message with TEST credentials
+POST {{base}}/2010-04-01/Accounts/{{account}}/Messages.json HTTP/1.1
+Authorization: Basic {{account}}:{{auth}}
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+To={{to}}&From={{from}}&Body=Hello+World
 
 
-
+### Test with LIVE crendentials   $.01 per text!
+POST {{base}}/2010-04-01/Accounts/{{account}}/Messages.json HTTP/1.1
+Authorization: Basic {{account}}:{{auth}}
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+To={{to}}&From={{from}}&Body=Hello+World
 
