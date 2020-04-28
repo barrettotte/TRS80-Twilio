@@ -14,7 +14,7 @@ After I decided I was going to participate in the Twilio hackathon I stumbled ac
 This probably won't get judged (I can't blame them), but this was one of the funnest projects I've ever done.
 
 I started out making the "frontend" on a TRS-80 Model 4P using BASIC and Z80 assembly.
-To summarize, I woke up one morning and my old computer no longer worked...Read more at [docs/TRS80-4P](docs/TRS80-4P).
+To summarize, I woke up one morning and my old computer no longer worked...Read more at [test/TRS80-4P](test/TRS80-4P).
 So, I had to start from scratch 5 days before the due date of this hackathon.
 I recently bought a cheap TRS-80 model 100, so I switched over to learning how it worked.
 
