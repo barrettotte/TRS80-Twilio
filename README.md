@@ -4,8 +4,9 @@
 Sending a text message from a TRS-80 Model 100 using the Twilio SMS API and an ESP8266.
 This is one of my entries to the [Twilio Hackathon on DEV (2020)](https://dev.to/devteam/announcing-the-twilio-hackathon-on-dev-2lh8).
 
-
-![docs/screenshots/20200427_195814.jpg](docs/screenshots/20200427_195814.jpg)
+<p align="center">
+  <img src="https://github.com/barrettotte/TRS80-Twilio/blob/master/docs/screenshots/20200427_195814.jpg" alt="TRS80-TWILIO" width="50%" height="50%"/>
+</p>
 
 
 ## Background
@@ -19,12 +20,15 @@ So, I had to start from scratch 5 days before the due date of this hackathon.
 I recently bought a cheap TRS-80 model 100, so I switched over to learning how it worked.
 
 
-![docs/screenshots/20200427_220409.jpg](docs/screenshots/20200427_220409.jpg)
+<p align="center">
+  <img src="https://github.com/barrettotte/TRS80-Twilio/blob/master/docs/screenshots/20200427_220409.jpg" alt="TRS80-TWILIO" width="50%" height="50%"/>
+</p>
 
 
 To my surprise, it was magnitudes easier to work with than the TRS-80 model 4P.
 With the model 4P, I was forced to embed Z80 machine code into BASIC in order to write to its serial port.
 With the model 100, all I had to do was open the serial port like a file and print to it...amazing.
+The primary frontend file is [TWILIO.BAS](https://github.com/barrettotte/TRS80-Twilio/blob/master/TWILIO.BAS).
 The frontend's job was to:
 * provide a simple interface to input a phone number and message
 * build a buffer of 145 bytes from user input
@@ -33,6 +37,7 @@ The frontend's job was to:
 
 The "backend" was pretty easy to build. I recently refreshed on Arduino and learned how to use PlatformIO.
 The biggest challenge with the backend was waiting for the incredibly slow serial port send all of the data.
+The primary backend file is [src/main.cpp](https://github.com/barrettotte/TRS80-Twilio/blob/master/src/main.cpp)
 The backend's job was to:
 * establish connection to WiFi
 * output helpful messages to OLED
@@ -41,11 +46,15 @@ The backend's job was to:
 * build and invoke HTTP request to Twilio SMS API
 
 
-![docs/screenshots/20200427_200253.jpg](docs/screenshots/20200427_200253.jpg)
+<p align="center">
+  <img src="https://github.com/barrettotte/TRS80-Twilio/blob/master/docs/screenshots/20200427_200253.jpg" alt="TRS80-TWILIO" width="50%" height="50%"/>
+</p>
 
 
 ## Project Layout
-![docs/screenshots/TRS80-Twilio.png](docs/screenshots/TRS80-Twilio.png)
+<p align="center">
+  <img src="https://github.com/barrettotte/TRS80-Twilio/blob/master/docs/screenshots/TRS80-Twilio.png" alt="TRS80-TWILIO" width="50%" height="50%"/>
+</p>
 
 ```
 ### Basic Wiring ###
@@ -69,7 +78,7 @@ In case anyone feels inclined to set this up (or I forget how to in the future)
 
 * Setup Twilio Account using [Twilio's documentation](https://www.twilio.com/docs/usage/tutorials/how-to-use-your-free-trial-account)
 * Own a working TRS-80 model 100
-* Either enter [TWILIO.BA](TWILIO.BA) by hand (what I did) or transfer via TELCOM application.
+* Either enter [TWILIO.BA](https://github.com/barrettotte/TRS80-Twilio/blob/master/TWILIO.BAS) by hand (what I did) or transfer via TELCOM application.
 * Hardware - refer to Project Layout above
   * [DB9 to DB25 Null Modem cable](https://www.amazon.com/StarTech-com-Cross-Wired-Serial-Modem/dp/B00066HL50/ref=sr_1_4?dchild=1)
   * [DB9 Male to Male coupler](https://www.amazon.com/gp/product/B07DMWGNTF/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
@@ -84,7 +93,7 @@ In case anyone feels inclined to set this up (or I forget how to in the future)
 * Connect ESP2866 via USB, compile, and upload with PlatformIO extension
 * On TRS80 Model 100, load **TWILIO.BA** and execute ```RUN``` in BASIC interpreter
 
-There's some other fun stuff included in [docs/](docs/), have a look.
+There's some other fun stuff included in [docs/](https://github.com/barrettotte/TRS80-Twilio/tree/master/docs), have a look.
 
 
 ## Embedded Development in VS Code
