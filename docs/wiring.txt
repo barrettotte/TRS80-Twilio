@@ -1,0 +1,13 @@
+### Basic Wiring ###
+
+TRS80 DB25 --> DB25-DB9 Null Modem --> DB9 Male-Male --> TTL-RS232 ...
+
+TTL-RS232   ESP8266      Mini OLED
+              GND <----> GND
+              3V3 <----> VCC
+              D1  <----> SCL
+              D2  <----> SDA
+GND <-------> GND
+VCC <-------> 3V3
+TXD <-------> D6 (RXD)
+RXD <-------> D5 (TXD)

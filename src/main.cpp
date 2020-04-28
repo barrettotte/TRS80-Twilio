@@ -146,7 +146,7 @@ int sendSms(String phoneTo, String msg){
     syncPrintfClr("Connection to Twilio API failed\n");
     return -1;
   }
-  syncPrintfClr("Connected to Twilio API\n");
+  syncPrintfClr("Connected to\nTwilio API\n");
 
   String reqBody = "To=" + urlEncode(phoneTo) + 
                    "&From=" + urlEncode(String(_TWILIO_FROM)) + 
