@@ -6,6 +6,8 @@ Sending a text message from a TRS-80 Model 100 using the Twilio SMS API and an E
 
 This is one of my entries to the [Twilio Hackathon on DEV (2020)](https://dev.to/devteam/announcing-the-twilio-hackathon-on-dev-2lh8).
 
+Here are the links to my [submission post](https://dev.to/barrettotte/trs80-twilio-sending-texts-like-its-1983-submission-450l) and [demo](https://www.youtube.com/watch?v=C2nngeuc3Oc).
+
 
 <br>
 <p align="center">
