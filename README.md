@@ -2,8 +2,12 @@
 
 
 Sending a text message from a TRS-80 Model 100 using the Twilio SMS API and an ESP8266.
+
+
 This is one of my entries to the [Twilio Hackathon on DEV (2020)](https://dev.to/devteam/announcing-the-twilio-hackathon-on-dev-2lh8).
 
+
+<br>
 <p align="center">
   <img src="https://github.com/barrettotte/TRS80-Twilio/blob/master/docs/screenshots/20200427_195814.jpg" alt="TRS80-TWILIO" width="50%" height="50%"/>
 </p>
